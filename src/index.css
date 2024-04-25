@@ -1,13 +1,117 @@
+:root {
+  --primary-color: #1aebb6;
+  --secondary-color: #3d3d3d;
+  --third-color: black;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--primary-color) 40%,
+    white 40%,
+    white 100%
+  );
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,
+h3 {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.help-container,
+.auth-container {
+  width: 100%;
+  min-width: 800px;
+  height: 80vh;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3), -0px -0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.auth-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.logo-container > img {
+  background-color: turquoise;
+
+  width: 100px;
+  height: 100px;
+}
+
+.logo-container > p {
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+}
+
+.form-container p {
+  width: 100%;
+  text-align: end;
+  padding: 12px;
+}
+
+.form-container a {
+  color: black;
+  font-size: small;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-container > div {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.primary-button {
+  width: 100%;
+  height: 50px;
+  background-color: var(--primary-color) !important;
+  color: var(--secondary-color) !important;
+  font-weight: bold !important;
+  font-size: medium !important;
+}
+
+.primary-button:hover {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+iframe{
+  width: 100%;
+  height: 90%;
 }
