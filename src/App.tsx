@@ -28,6 +28,7 @@ const App: React.FC = () => {
       </Route>
       <Route element={<HelpLayout />}>
         <Route path="/help" element={<NeedHelp />} />
+        {/* route behind is for not matching elements */}
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
     </Routes>

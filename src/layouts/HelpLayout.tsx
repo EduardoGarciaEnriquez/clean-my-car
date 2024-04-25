@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
+//help layout supposed to be usefull to the need help screen and not match screen
 function HelpLayout() {
   return (
     <div className="auth-container">

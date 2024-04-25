@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 
+//layout for auth components like login, signup, forgot password, recover password, etc.
 function AuthLayout() {
   return (
     <div className="auth-container">
