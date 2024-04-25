@@ -6,6 +6,11 @@ import NeedHelp from "./pages/NeedHelp";
 import AuthLayout from "./layouts/AuthLayout";
 import HelpLayout from "./layouts/HelpLayout";
 
+/*
+ I imported the components and rendered them on a different layout accodring to their function
+ or the screen where them belong.
+*/
+
 const App: React.FC = () => {
   return (
     <Routes>
@@ -13,17 +18,15 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/forgot-password" element={<ForgotPasswordForm />} />
         <Route
-            path="/"
-            element={
-              <RequireAuth>
-                <>
-                  you're in 👍🏽
-                </>
-              </RequireAuth>
-            }
-          />
+          path="/"
+          element={
+            <RequireAuth>
+              <>you're in 👍🏽</>
+            </RequireAuth>
+          }
+        />
       </Route>
-      <Route element={<HelpLayout/>}>
+      <Route element={<HelpLayout />}>
         <Route path="/help" element={<NeedHelp />} />
         {/* <Route path="*" element={<NoMatch />} /> */}
       </Route>
@@ -31,9 +34,9 @@ const App: React.FC = () => {
   );
 };
 
-
+//function to protect private route if user is not auth.
 function RequireAuth({ children }: { children: JSX.Element }) {
-  let auth = sessionStorage.getItem('isAuthenticated');
+  let auth = sessionStorage.getItem("isAuthenticated");
   let location = useLocation();
 
   if (!auth) {
@@ -42,7 +45,5 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
   return children;
 }
-
-
 
 export default App;
